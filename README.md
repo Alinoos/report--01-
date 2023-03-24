@@ -29,3 +29,24 @@ $ ls -l | grep "^-" | wc -l
 $ ls -l -R | wc -l
 ```
 ![изображение](https://user-images.githubusercontent.com/126507425/227595024-68cd165d-b1be-42b7-8581-c1683320e645.png)
+```
+5) Подсчитаем количество заголовочных файлов, файлов с расширением .cpp, сколько остальных файлов (не заголовочных и не .cpp).
+$ ls -l -R | grep -c *.hpp
+$ ls -l -R | grep -c *.cpp
+$ ls -l -R | grep -v *.hpp | grep -v *.cpp | grep -v 'итого' | wc -l
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227598561-614dff61-6418-42be-b09f-bc5e3357425b.png)
+```
+6) Найдём полный пусть до файла any.hpp внутри библиотеки boost.
+$ find $PWD -type f -name any.hpp
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227600060-8dd76621-c0b7-4b19-9eb3-1f9db9589a32.png)
+```
+7) Выведем в консоль все файлы, где упоминается последовательность boost::asio.
+$ grep -R -l "boost::asio"
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227601381-c9226b37-44c6-4489-be53-54ece534dd1e.png)
+```
+8) Скомпилируем boost
+
+```
