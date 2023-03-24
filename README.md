@@ -10,12 +10,22 @@
 
 ## Tutorial
 ```
-Скачиваем библиотеку boost с помощью утилиты wget
+1) Скачиваем библиотеку boost с помощью утилиты wget
 $ wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
 ```
 ![lb1](https://user-images.githubusercontent.com/126507425/227588149-857f3aff-2c39-4c6c-87ac-a0c7e4fe2a3e.png)
 
 ```
-Разархивируем скаченный файл в директорию ~/boost_1_69_0
+2)Разархивируем скаченный файл в директорию ~/boost_1_69_0
 $ tar -xvf boost_1_69_0.tar.gz
-...
+```
+```
+3) Подсчитываем количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
+$ ls -l | grep "^-" | wc -l
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227594388-f8aa2eb3-8a1f-4243-a85f-9fe45a032bcf.png)
+```
+4) Подсчитываем количество файлов в директории ~/boost_1_69_0 включая вложенные директории.
+$ ls -l -R | wc -l
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227595024-68cd165d-b1be-42b7-8581-c1683320e645.png)
