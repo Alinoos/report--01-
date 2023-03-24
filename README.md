@@ -4,9 +4,9 @@
 
 ## Tasks
 
-- [ ] 1. Ознакомилась со ссылками учебного материала
-- [ ] 2. Выполнила инструкцию учебного материала
-- [ ] 3. Составила отчет 
+- [+] 1. Ознакомилась со ссылками учебного материала
+- [+] 2. Выполнила инструкцию учебного материала
+- [+] 3. Составила отчет 
 
 ## Tutorial
 ```
@@ -48,5 +48,26 @@ $ grep -R -l "boost::asio"
 ![изображение](https://user-images.githubusercontent.com/126507425/227601381-c9226b37-44c6-4489-be53-54ece534dd1e.png)
 ```
 8) Скомпилируем boost
+$ sudo apt install libicu-dev
+$ ./bootstrap.sh --prefix=boost_output
+$ ./b2 install
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227610726-231f90b1-a277-4895-ab66-48b81166682b.png)
 
 ```
+9) Перенесём все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
+$ mv ~/boost_1_69_0/boost_output/lib/ ~/boost-libs/
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227611945-f68cdccd-766d-4d94-b226-31e00c3c48c3.png)
+
+```
+10) Подсчитаем сколько занимает дискового пространства каждый файл в этой директории.
+$ du -h -a | sort -h
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227613253-ab21e196-8dab-4b52-87c2-7a008449871c.png)
+
+```
+11) Найдём топ 10 самых "тяжёлых".
+$ du -h -a | sort -r -h | head -n 10
+```
+![изображение](https://user-images.githubusercontent.com/126507425/227613478-ceff1903-eeef-431b-a9a1-b7c314d4a34b.png)
